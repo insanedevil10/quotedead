@@ -1,0 +1,518 @@
+/* Global styles */
+:root {
+    --primary-color: #C62828;
+    --background-color: #2D2D2D;
+    --surface-color: #3D3D3D;
+    --text-color: white;
+    --border-color: #555;
+    --header-bg-color: #FFFFFF;
+    --header-text-color: #333333;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .app-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--header-bg-color);
+  }
+  
+  .app-logo {
+    max-width: 250px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .app-logo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .app-header h1 {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .app-content {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .app-footer {
+    padding: 0.5rem 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+  }
+  
+  /* Form elements */
+  input, select, textarea, button {
+    background-color: #444;
+    color: white;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: 3px;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  button {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: var(--primary-color);
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  button:disabled:hover {
+    background-color: #444;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: left;
+    padding: 0.5rem;
+  }
+  
+  td {
+    border: 1px solid #444;
+    padding: 0.5rem;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Form and Groups */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-row {
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-row > label {
+    flex: 1;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-row > input,
+  .form-row > select,
+  .form-row > textarea {
+    flex: 2;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Tabs component */
+  .tabs {
+    margin-bottom: 1rem;
+  }
+  
+  .tabs-header {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .tab-button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.25rem;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+    color: #CCC;
+  }
+  
+  .tab-button.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .tab-content {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-top: none;
+  }
+  
+  /* Card and panel styles */
+  .card {
+    background-color: var(--surface-color);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Project Info Tab Styles */
+  .project-info-tab .description {
+    font-style: italic;
+    color: #888;
+  }
+  
+  /* Rooms Tab Styles */
+  .rooms-tab .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .rooms-tab .room-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  /* Scope of Work Tab Styles */
+  .scope-of-work-tab .toolbar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .scope-of-work-tab .room-selector {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Dashboard Tab Styles */
+  .dashboard-tab .dashboard-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-tab .dashboard-bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-tab .chart-container {
+    min-height: 300px;
+    position: relative;
+  }
+  
+  .dashboard-tab .no-data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #888;
+  }
+  
+  .dashboard-tab .room-tree {
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-tab .tree-view {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .dashboard-tab .tree-item {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+  
+  .dashboard-tab .totals-section {
+    margin-top: 1rem;
+  }
+  
+  .dashboard-tab .totals-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+  
+  .dashboard-tab .totals-row label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .dashboard-tab .totals-row input {
+    width: 4rem;
+  }
+  
+  .dashboard-tab .grand-total {
+    font-weight: bold;
+    color: var(--primary-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .dashboard-tab .stats-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .dashboard-tab .stats-row {
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+  
+  .dashboard-tab .chart-options {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: var(--surface-color);
+    border-radius: 4px;
+  }
+  
+  .dashboard-tab .option-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Export Tab Styles */
+  .export-tab .template-selection,
+  .export-tab .logo-selection,
+  .export-tab .export-format {
+    margin-bottom: 1rem;
+  }
+  
+  .export-tab .template-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .export-tab .logo-preview {
+    background-color: #333;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    max-width: 250px;
+  }
+  
+  .export-tab .logo-preview img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .export-tab .export-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .export-tab .preview-container {
+    height: 500px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: white;
+  }
+  
+  /* Rate Card Tab Styles */
+  .rate-card-tab .rate-card-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .rate-card-tab .category-sidebar {
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .rate-card-tab .category-sidebar .card-header {
+    padding: 1rem;
+    margin: 0;
+  }
+  
+  .rate-card-tab .category-list {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .rate-card-tab .category-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .rate-card-tab .category-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .rate-card-tab .category-item.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .rate-card-tab .category-buttons {
+    padding: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .rate-card-tab .rate-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .rate-card-tab .rate-card-table-container {
+    margin-bottom: 1rem;
+    overflow-x: auto;
+  }
+  
+  .rate-card-tab .rate-card-buttons {
+    margin-top: 1rem;
+  }
+  
+  .rate-card-tab .rate-card-io {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  /* Status message */
+  .status-message {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+  
+  .status-success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+  }
+  
+  .status-error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+  }
+  
+  .status-info {
+    background-color: rgba(33, 150, 243, 0.2);
+    color: #2196F3;
+  }
+  
+  .status-warning {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+  }
+  
+  /* Helpers */
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .text-muted {
+    color: #888;
+  }
+  
+  .mt-1 {
+    margin-top: 0.5rem;
+  }
+  
+  .mt-2 {
+    margin-top: 1rem;
+  }
+  
+  .mb-1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .mb-2 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Custom Tooltip styles */
+  .custom-tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #444;
+  }
+  
+  .custom-tooltip .label {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  /* Make the app responsive */
+  @media (max-width: 768px) {
+    .dashboard-tab .dashboard-charts,
+    .dashboard-tab .dashboard-bottom,
+    .rate-card-tab .rate-card-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .dashboard-tab .stats-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+      flex-direction: column;
+    }
+  }

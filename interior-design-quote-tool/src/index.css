@@ -1,0 +1,104 @@
+/* Base styles for the entire app */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #2D2D2D;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  /* For custom scrollbars in modern browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #2D2D2D;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C62828;
+  }
+  
+  /* Utility classes */
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Reset button styles */
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+  
+  /* Reset input styles */
+  input, select, textarea {
+    font-family: inherit;
+  }
+  
+  /* When text is selected */
+  ::selection {
+    background-color: #C62828;
+    color: white;
+  }
+  
+  /* For Firefox */
+  ::-moz-selection {
+    background-color: #C62828;
+    color: white;
+  }
+  
+  /* Focus styles for accessibility */
+  :focus {
+    outline: 2px solid #C62828;
+    outline-offset: 2px;
+  }
+  
+  /* Ensure proper focus visibility for keyboard users only */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  :focus-visible {
+    outline: 2px solid #C62828;
+    outline-offset: 2px;
+  }
